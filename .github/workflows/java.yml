@@ -27,7 +27,7 @@ jobs:
             steps:
       - name: Hello world action step
         id: hello
-        uses: octocat/hello-jscript-action@v1.1
+        uses: saru1604/hello-jscript-action@v1.1
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
