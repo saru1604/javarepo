@@ -19,10 +19,12 @@ jobs:
             npm ci
             npm install @actions/core
             npm install @actions/github
-            run: |
+      - name: build
+        run: |
             npm run build
             npm run test
-            run: |
+      - name: node
+        run: |
             node index.js
             steps:
 #       - name: Hello world action step
