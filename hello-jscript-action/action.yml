@@ -11,13 +11,13 @@ outputs:
 runs:
   using: 'node16'
   main: 'index.js'
-#   runs:
-#   using: "composite"
-#   steps:
-#     - name: saru
-#       id: pre-deployment
-#       shell: shell
-#       run: |-
-#         dir
-#         ./
-#         write-Output "script success"
+  runs:
+  using: "composite"
+  steps:
+    - name: saru
+      id: pre-deployment
+      shell: shell
+      run: |-
+        dir
+        ./
+        write-Output "script success"
