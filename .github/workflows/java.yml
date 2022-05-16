@@ -8,13 +8,25 @@ jobs:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Hello world action step
-#         uses: ./ # Uses an action in the root directory
-        id: hello
-        uses: ./.github        
+        uses: actions/checkout@v2
+      - name: set up node
+        uses: actions/setup-node@main
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+           node-version: ${{ matrix.node-version }}
+           run: |
+            npm install
+            npm ci
+            run: |
+            npm run build
+            npm run test
+            run: |
+            node index.js
+        
+#         uses: ./ # Uses an action in the root directory
+#   id: hello
+#   uses: ./.github        
+#   with:
+#   who-to-greet: 'Mona the Octocat'
+#       # Use the output from the `hello` step
+#   - name: Get the output time 
+#     run: echo "The time was ${{ steps.hello.outputs.time }}"
