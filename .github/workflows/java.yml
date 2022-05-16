@@ -9,10 +9,10 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-#       - name: set up node
-#         uses: actions/setup-node@main
-#         with:
-#            node-version: ${{ matrix.node-version }}
+      - name: set up node
+        uses: actions/setup-node@main
+        with:
+           node-version: ${{ matrix.node-version }}
       - name: install 
         run: |
             npm install
@@ -27,7 +27,7 @@ jobs:
             steps:
       - name: Hello world action step
         id: hello
-        uses: octocat/.@v1.1
+        uses: octocat/javarepo@v1.1
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
