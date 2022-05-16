@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   java:
-    runs-on: windows-latest
+    runs-on: window-latest
     name: A job to say hello
     steps:
       # To use this repository's private action,
