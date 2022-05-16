@@ -16,6 +16,8 @@ jobs:
            run: |
             npm install
             npm ci
+            npm install @actions/core
+            npm install @actions/github
             run: |
             npm run build
             npm run test
