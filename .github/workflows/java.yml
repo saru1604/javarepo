@@ -9,11 +9,12 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: set up node
-        uses: actions/setup-node@main
-        with:
-           node-version: ${{ matrix.node-version }}
-           run: |
+#       - name: set up node
+#         uses: actions/setup-node@main
+#         with:
+#            node-version: ${{ matrix.node-version }}
+      - name: install 
+        run: |
             npm install
             npm ci
             npm install @actions/core
@@ -23,12 +24,12 @@ jobs:
             npm run test
             run: |
             node index.js
-        
-#         uses: ./ # Uses an action in the root directory
-#   id: hello
-#   uses: ./.github        
-#   with:
-#   who-to-greet: 'Mona the Octocat'
-#       # Use the output from the `hello` step
-#   - name: Get the output time 
-#     run: echo "The time was ${{ steps.hello.outputs.time }}"
+            steps:
+      - name: Hello world action step
+        id: hello
+        uses: octocat/javarepo@v1.1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
