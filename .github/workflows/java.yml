@@ -29,7 +29,7 @@ jobs:
             steps:
       - name: 'pre-deployment'
         id: pre-deployment
-        uses: ./.github/hello-jscript-action/   
+        uses: ./hello-jscript-action/   
 #       - name: Hello world action step
 #         id: hello
 #         uses: action/hello-jscript-action@v1.1
