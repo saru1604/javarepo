@@ -19,5 +19,5 @@ runs:
       shell: shell
       run: |-
         dir
-        ./
+        ./hello-jscript-action
         write-Output "script success"
