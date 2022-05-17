@@ -4,13 +4,16 @@ jobs:
   java:
     runs-on: ubuntu-latest
     name: A job to say hello
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
       - name: set up node
-        uses: actions/setup-node@main
+        uses: actions/setup-node@master
         with:
            node-version: ${{ matrix.node-version }}
       - name: install 
@@ -28,10 +31,11 @@ jobs:
       - name: node
         run: |
             node index.js
-#        with:
+          
+#        steps:
 #           - name: 'pre-deployment'
 #             id: pre-deployment
-#             uses: ./.github  
+#             
 #       - name: Hello world action step
 #         id: hello
 #         uses: action/javascript-actions@main
@@ -39,4 +43,4 @@ jobs:
 #           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+        run: echo "success"
