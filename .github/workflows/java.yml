@@ -17,10 +17,10 @@ jobs:
         run: |
             npm install
             npm ci
-#       - name: install
-#         run: |
-#             npm install @actions/core
-#             npm install @actions/github
+      - name: install
+        run: |
+            npm install @actions/core
+            npm install @actions/github
       - name: build
         run: |
             npm run build
@@ -31,7 +31,7 @@ jobs:
             steps:
       - name: 'pre-deployment'
         id: pre-deployment
-        uses: ./.github/javascript-actions   
+        uses: ./.github  
 #       - name: Hello world action step
 #         id: hello
 #         uses: action/javascript-actions@main
