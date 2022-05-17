@@ -1,4 +1,10 @@
-on: [push]
+name: json
+
+on:  
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ] 
 
 jobs:
   java:
