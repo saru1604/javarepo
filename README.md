@@ -16,6 +16,6 @@ The time we greeted you.
 
 ## Example usage
 
-uses: actions/hello-jscript-action@v1.1
+uses: actions/javascript-actions@master
 with:
   who-to-greet: 'Mona the Octocat'
