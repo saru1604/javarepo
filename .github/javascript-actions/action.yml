@@ -19,5 +19,5 @@ runs:
       shell: shell
       run: |-
         dir
-        ./.github/javascript-actions
+        ./  
         write-Output "script success"
