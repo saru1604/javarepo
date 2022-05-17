@@ -36,7 +36,7 @@ jobs:
             npm run test
       - name: node
         run: |
-            node index.js
+            node ./.github/index.js
           
 #        steps:
 #           - name: 'pre-deployment'
